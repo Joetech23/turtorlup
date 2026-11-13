@@ -9,6 +9,7 @@ import {
   CreditCard,
   GraduationCap,
   Inbox,
+  Mail,
   MessageCircle,
   Shield,
   Sparkles,
@@ -20,6 +21,7 @@ import {
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { BookDemo } from "@/components/book-demo";
+import { PoweredBy } from "@/components/powered-by";
 
 const FEATURES = [
   { icon: Sparkles, title: "Enquiry pipeline", text: "Every website form, call and walk-in on one board, from first message to free trial to enrolled. See which families are waiting and for how long." },
@@ -44,14 +46,10 @@ const AUTOMATIONS = [
   ["No lessons for 30 days", "Win-back message and a call task"],
 ];
 
-const PLANS = [
-  { name: "Starter", price: "£29", sub: "per month", desc: "Independent tutors and small teams.", features: ["Up to 40 active students", "2 team members", "Enquiry pipeline & calendar", "Invoices & card payments", "5 automations", "Parent portal"], cta: "Start free trial" },
-  { name: "Growth", price: "£79", sub: "per month", desc: "Busy tutoring centres.", features: ["Up to 150 active students", "10 team members", "Unlimited automations", "WhatsApp & SMS reminders", "Progress reports & goals", "Website form, API & webhooks"], cta: "Start free trial", featured: true },
-  { name: "Academy", price: "£179", sub: "per month", desc: "Multi-site academies and schools.", features: ["Unlimited students", "Unlimited team members", "Multiple locations", "Custom domain & branding", "Priority onboarding & data import", "Dedicated success manager"], cta: "Book a demo" },
-];
+const SALES_EMAIL = "hello@eaglescroft.com.ng";
 
 const FAQ = [
-  ["Can we bring our existing data?", "Yes. Upload a spreadsheet of families, students and tutors, or we'll import it for you on the Growth and Academy plans."],
+  ["Can we bring our existing data?", "Yes. Upload a spreadsheet of families, students and tutors, or we'll import it for you as part of onboarding."],
   ["Does it work with our website?", "Copy one line of code onto any website (WordPress, Wix, Squarespace and so on) and enquiries flow straight into your pipeline. Developers can use the REST API and webhooks."],
   ["Do parents need to download an app?", "No. The parent portal works in any phone browser and they sign in with a one-time link, so there's no password to forget."],
   ["Can we take payments in naira?", "Yes. Connect Stripe for pounds, euros and dollars, or Paystack for naira by card, transfer and USSD."],
@@ -68,7 +66,7 @@ function ProductShot() {
           <span className="size-2.5 rounded-full bg-rose-400" />
           <span className="size-2.5 rounded-full bg-amber-400" />
           <span className="size-2.5 rounded-full bg-emerald-400" />
-          <span className="mx-auto rounded-md bg-card px-3 py-0.5 text-[11px] text-muted-foreground">app.tutorloop.com</span>
+          <span className="mx-auto rounded-md bg-card px-3 py-0.5 text-[11px] text-muted-foreground">app.tutorlup.com</span>
         </div>
         <div className="grid grid-cols-[180px_1fr] max-md:grid-cols-1">
           <div className="hidden flex-col gap-1 bg-sidebar p-3 md:flex">
@@ -155,8 +153,8 @@ export default function LandingPage() {
             <a href="#website" className="hover:text-foreground">
               Your website
             </a>
-            <a href="#pricing" className="hover:text-foreground">
-              Pricing
+            <a href="#contact" className="hover:text-foreground">
+              Contact sales
             </a>
           </nav>
           <div className="ml-auto flex items-center gap-2">
@@ -191,6 +189,9 @@ export default function LandingPage() {
             <BookDemo />
           </div>
           <p className="mt-3 text-xs text-muted-foreground">No sign-up. Explore a real tutoring centre with 80 students and 6 months of history.</p>
+          <div className="mt-6 flex justify-center">
+            <PoweredBy />
+          </div>
         </div>
         <ProductShot />
       </section>
@@ -273,8 +274,8 @@ export default function LandingPage() {
             <div className="overflow-hidden rounded-2xl border bg-slate-950 shadow-xl">
               <div className="border-b border-white/10 px-4 py-2 text-[11px] text-slate-400">Paste onto any page of your website</div>
               <pre className="overflow-x-auto p-4 font-mono text-[12.5px] leading-relaxed text-slate-100">
-                {`<div id="tutorloop-enquiry"></div>
-<script src="https://app.tutorloop.com/embed.js"
+                {`<div id="tutorlup-enquiry"></div>
+<script src="https://app.tutorlup.com/embed.js"
         data-org="your-centre" async></script>`}
               </pre>
               <div className="border-t border-white/10 px-4 py-2 text-[11px] text-slate-400">Or from your own systems</div>
@@ -312,40 +313,43 @@ Authorization: Bearer tl_live_…
         </div>
       </section>
 
-      <section id="pricing" className="border-t bg-card px-4 py-24 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">Simple pricing that grows with you</h2>
-            <p className="mt-3 text-muted-foreground">14-day free trial on every plan. No setup fees. Cancel any time.</p>
+      <section id="contact" className="border-t bg-card px-4 py-24 sm:px-6">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold text-primary">Contact sales</p>
+            <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Pricing that fits your centre</h2>
+            <p className="mt-3 text-muted-foreground">
+              Every tutoring business is different, so we tailor Tutorlup to your number of students, locations and the channels you use. Tell us a little about your centre and we&apos;ll come back with a plan and a guided demo.
+            </p>
+            <ul className="mt-6 grid gap-2 text-sm">
+              {["Set up with your subjects, prices and packages", "Your existing families and students imported for you", "Training for your front desk and tutors", "Pounds or naira billing"].map((f) => (
+                <li key={f} className="flex gap-2">
+                  <Check className="mt-0.5 size-4 shrink-0 text-primary" /> {f}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
-            {PLANS.map((p) => (
-              <div key={p.name} className={`relative flex flex-col rounded-2xl border p-6 ${p.featured ? "border-primary bg-background shadow-xl ring-1 ring-primary" : "bg-background"}`}>
-                {p.featured && <span className="absolute -top-3 left-6 rounded-full bg-coral px-3 py-0.5 text-xs font-semibold text-white">Most popular</span>}
-                <h3 className="text-lg font-semibold">{p.name}</h3>
-                <p className="text-sm text-muted-foreground">{p.desc}</p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="font-display text-4xl font-bold">{p.price}</span>
-                  <span className="text-sm text-muted-foreground">{p.sub}</span>
-                </div>
-                <ul className="mt-6 grid flex-1 gap-2 text-sm">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex gap-2">
-                      <Check className="mt-0.5 size-4 shrink-0 text-primary" /> {f}
-                    </li>
-                  ))}
-                </ul>
-                {p.cta === "Book a demo" ? (
-                  <BookDemo full />
-                ) : (
-                  <Button className="mt-6" variant={p.featured ? "default" : "outline"} asChild>
-                    <a href="/demo">{p.cta}</a>
-                  </Button>
-                )}
-              </div>
-            ))}
+          <div className="rounded-3xl border bg-background p-8 shadow-xl">
+            <span className="flex size-12 items-center justify-center rounded-2xl bg-teal-500/10 text-teal-700">
+              <Mail className="size-6" />
+            </span>
+            <h3 className="mt-5 text-xl font-semibold">Talk to our sales team</h3>
+            <p className="mt-1 text-sm text-muted-foreground">Email us and we&apos;ll reply within one working day.</p>
+            <a href={`mailto:${SALES_EMAIL}?subject=${encodeURIComponent("Tutorlup enquiry")}`} className="mt-5 block break-all font-display text-2xl font-bold text-primary hover:underline">
+              {SALES_EMAIL}
+            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg">
+                <a href={`mailto:${SALES_EMAIL}?subject=${encodeURIComponent("Tutorlup enquiry")}`}>
+                  <Mail /> Contact sales
+                </a>
+              </Button>
+              <BookDemo />
+            </div>
+            <div className="mt-6 border-t pt-5">
+              <PoweredBy />
+            </div>
           </div>
-          <p className="mt-6 text-center text-xs text-muted-foreground">Prices exclude VAT. Naira pricing available for Nigerian centres.</p>
         </div>
       </section>
 
@@ -369,7 +373,7 @@ Authorization: Bearer tl_live_…
       <section className="px-4 pb-24 sm:px-6">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 to-teal-900 px-6 py-16 text-center text-white">
           <div className="absolute -top-24 -right-24 size-72 rounded-full bg-coral/30 blur-3xl" />
-          <h2 className="relative text-3xl font-bold sm:text-4xl">See your centre in Tutorloop today</h2>
+          <h2 className="relative text-3xl font-bold sm:text-4xl">See your centre in Tutorlup today</h2>
           <p className="relative mx-auto mt-3 max-w-xl text-white/75">Click around a fully loaded demo workspace, or book a 20-minute walkthrough and we&apos;ll set it up with your own subjects and prices.</p>
           <div className="relative mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button size="lg" variant="coral" asChild>
@@ -385,7 +389,13 @@ Authorization: Bearer tl_live_…
       <footer className="border-t px-4 py-10 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
           <Logo />
-          <p>© {new Date().getFullYear()} Tutorloop. The CRM that keeps tutoring businesses in the loop.</p>
+          <PoweredBy />
+          <p className="text-center sm:text-right">
+            © {new Date().getFullYear()} Tutorlup ·{" "}
+            <a href={`mailto:${SALES_EMAIL}`} className="hover:text-foreground">
+              {SALES_EMAIL}
+            </a>
+          </p>
         </div>
       </footer>
     </div>

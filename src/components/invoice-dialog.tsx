@@ -119,7 +119,7 @@ export function InvoiceDialog({ invoice, onOpenChange }: { invoice: Invoice | nu
             </div>
           )}
           <div className="flex flex-wrap gap-2">
-            <Button variant="ghost" size="sm" onClick={() => { navigator.clipboard?.writeText(`https://pay.tutorloop.app/i/${inv.number}`).catch(() => {}); toast.success("Payment link copied", { description: "Demo link: no real payment page." }); }}>
+            <Button variant="ghost" size="sm" onClick={() => { navigator.clipboard?.writeText(`https://pay.tutorlup.app/i/${inv.number}`).catch(() => {}); toast.success("Payment link copied", { description: "Demo link: no real payment page." }); }}>
               <Link2 /> Copy payment link
             </Button>
             <Button variant="ghost" size="sm" onClick={() => window.print()}>

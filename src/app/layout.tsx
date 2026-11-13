@@ -8,7 +8,7 @@ const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 const display = Bricolage_Grotesque({ variable: "--font-display", subsets: ["latin"], weight: ["500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
-  title: { default: "Tutorloop: the CRM that keeps tutoring businesses in the loop", template: "%s · Tutorloop" },
+  title: { default: "Tutorlup: the CRM that keeps tutoring businesses in the loop", template: "%s · Tutorlup" },
   description:
     "Enquiries, lessons, families, invoices and automated reminders in one place. Built for tutoring centres, academies and independent tutors.",
   icons: { icon: "/icon.svg" },

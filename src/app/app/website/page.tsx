@@ -44,13 +44,13 @@ export default function WebsitePage() {
   const origin = useSyncExternalStore(
     noopSubscribe,
     () => window.location.origin,
-    () => "https://your-tutorloop.vercel.app",
+    () => "https://your-tutorlup.vercel.app",
   );
   const [reveal, setReveal] = useState(false);
   const [tryRes, setTryRes] = useState<string>("");
   const [hooks, setHooks] = useState([
     { url: "https://hooks.zapier.com/hooks/catch/123456/brightpath", events: ["enquiry.created", "student.enrolled"], active: true },
-    { url: "https://brightpath-tutoring.co.uk/api/tutorloop", events: ["invoice.paid"], active: false },
+    { url: "https://brightpath-tutoring.co.uk/api/tutorlup", events: ["invoice.paid"], active: false },
   ]);
   const slug = ws.org.slug;
   const key = ws.org.apiKey;
@@ -72,7 +72,7 @@ export default function WebsitePage() {
   };
 
   const script = `<!-- Paste where you want the form to appear -->
-<div id="tutorloop-enquiry"></div>
+<div id="tutorlup-enquiry"></div>
 <script src="${origin}/embed.js" data-org="${slug}" async></script>`;
   const iframe = `<iframe src="${origin}/embed/enquiry/${slug}"
   style="width:100%;min-height:620px;border:0" title="Enquiry form"></iframe>`;
@@ -91,13 +91,13 @@ export default function WebsitePage() {
   const js = `await fetch("${origin}/api/v1/enquiries", {
   method: "POST",
   headers: {
-    Authorization: "Bearer " + process.env.TUTORLOOP_API_KEY,
+    Authorization: "Bearer " + process.env.TUTORLUP_API_KEY,
     "Content-Type": "application/json",
   },
   body: JSON.stringify({ parent_name, email, student_name, subjects }),
 });`;
-  const webhookPayload = `POST https://your-server.com/webhooks/tutorloop
-X-Tutorloop-Signature: t=1763049600,v1=5f2c…
+  const webhookPayload = `POST https://your-server.com/webhooks/tutorlup
+X-Tutorlup-Signature: t=1763049600,v1=5f2c…
 
 {
   "event": "enquiry.created",
@@ -113,7 +113,7 @@ X-Tutorloop-Signature: t=1763049600,v1=5f2c…
 
   return (
     <div className="mx-auto max-w-6xl">
-      <PageHeader title="Website & API" description="Connect Tutorloop to your website, booking pages and other tools. No developer needed for the form." />
+      <PageHeader title="Website & API" description="Connect Tutorlup to your website, booking pages and other tools. No developer needed for the form." />
       <Tabs defaultValue="form">
         <TabsList>
           <TabsTrigger value="form">

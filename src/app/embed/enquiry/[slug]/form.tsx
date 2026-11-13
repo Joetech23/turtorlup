@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 const SUBJECTS = ["Maths", "English", "Science", "11+", "Biology", "Chemistry", "Physics", "Computer Science", "French", "Spanish"];
-const INBOUND_KEY = "tutorloop:inbound";
+const INBOUND_KEY = "tutorlup:inbound";
 
 export function EmbedForm({ slug, orgName, brand }: { slug: string; orgName: string; brand: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,7 +16,7 @@ export function EmbedForm({ slug, orgName, brand }: { slug: string; orgName: str
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const post = () => window.parent?.postMessage({ type: "tutorloop:resize", height: el.scrollHeight + 4 }, "*");
+    const post = () => window.parent?.postMessage({ type: "tutorlup:resize", height: el.scrollHeight + 4 }, "*");
     post();
     const ro = new ResizeObserver(post);
     ro.observe(el);
@@ -36,7 +36,7 @@ export function EmbedForm({ slug, orgName, brand }: { slug: string; orgName: str
       return setState("idle");
     }
     if (!res.ok) return setState("error");
-    // Demo convenience: hand the new enquiry to an open Tutorloop tab on this site.
+    // Demo convenience: hand the new enquiry to an open Tutorlup tab on this site.
     try {
       const d = json.data;
       const at = d.created_at;
@@ -50,7 +50,7 @@ export function EmbedForm({ slug, orgName, brand }: { slug: string; orgName: str
     } catch {
       /* ignore */
     }
-    window.parent?.postMessage({ type: "tutorloop:submitted" }, "*");
+    window.parent?.postMessage({ type: "tutorlup:submitted" }, "*");
     setState("done");
   };
 
@@ -130,7 +130,7 @@ export function EmbedForm({ slug, orgName, brand }: { slug: string; orgName: str
               {state === "sending" ? "Sending…" : "Send enquiry"}
             </button>
             {state === "error" && <p className="text-sm text-rose-600">Something went wrong. Please try again.</p>}
-            <p className="text-center text-[11px] text-slate-400">Powered by Tutorloop</p>
+            <p className="text-center text-[11px] text-slate-400">Powered by Tutorlup</p>
           </form>
         )}
       </div>

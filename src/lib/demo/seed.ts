@@ -660,7 +660,7 @@ export function buildDemoWorkspace(now: Date = new Date()): Workspace {
       }
     }
   };
-  const baseVars = { "org.name": org.name, trial_link: "brightpath.tutorloop.app/trial", enrol_link: "brightpath.tutorloop.app/enrol", pay_link: "pay.tutorloop.app/i/demo", topup_link: "pay.tutorloop.app/topup", booking_link: "brightpath.tutorloop.app/book" };
+  const baseVars = { "org.name": org.name, trial_link: "brightpath.tutorlup.app/trial", enrol_link: "brightpath.tutorlup.app/enrol", pay_link: "pay.tutorlup.app/i/demo", topup_link: "pay.tutorlup.app/topup", booking_link: "brightpath.tutorlup.app/book" };
   const tutorById = Object.fromEntries(tutors.map((t) => [t.id, t]));
   const fmtTime = new Intl.DateTimeFormat("en-GB", { timeZone: APP_TZ, hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
   const fmtDay = new Intl.DateTimeFormat("en-GB", { timeZone: APP_TZ, weekday: "short", day: "numeric", month: "short" });

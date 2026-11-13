@@ -22,7 +22,7 @@ export function Logo({ className, light }: { className?: string; light?: boolean
     <span className={cn("inline-flex items-center gap-2", className)}>
       <LogoMark />
       <span className={cn("font-display text-[19px] font-bold tracking-tight", light ? "text-white" : "text-foreground")}>
-        tutor<span className="text-[#14b8a6]">loop</span>
+        tutor<span className="text-[#14b8a6]">lup</span>
       </span>
     </span>
   );

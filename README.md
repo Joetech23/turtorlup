@@ -1,8 +1,8 @@
-# Tutorloop
+# Tutorlup
 
-**The CRM that keeps tutoring businesses in the loop.**
+**The CRM that keeps tutoring businesses in the loop.** Powered by [Eaglescroft](https://eaglescroft.com.ng).
 
-Tutorloop is a multi-tenant CRM for tutoring centres, academies and independent tutors: enquiries, families, students, tutors, lessons, billing, progress reports, parent messaging and automations in one place.
+Tutorlup is a multi-tenant CRM for tutoring centres, academies and independent tutors: enquiries, families, students, tutors, lessons, billing, progress reports, parent messaging and automations in one place.
 
 This repository is a **sales demo**. It looks and works like a finished product, with a fully loaded sample workspace ("Brightpath Tutoring", Croydon). **No real email, SMS or WhatsApp is ever sent.** Automations write to a simulated message log and to each family's timeline.
 
@@ -30,13 +30,13 @@ We looked at what general tutoring and education-business tools offer (schedulin
 | Reporting | Enquiries per week, conversion, active vs. paused students, revenue by month/subject/source, lessons per tutor |
 | Integrations | Website enquiry form, calendar sync, video calls, payments, accounting, API/webhooks |
 
-Tutorloop covers all of these. Beyond the brief we added: a **tasks list** fed by automations, **tutor utilisation and monthly pay due**, **gross margin**, **goals at risk**, **global search (Ctrl K)**, a **custom automation builder**, **"send me a test"** for automations, and **Paystack** (naira) alongside Stripe in integrations.
+Tutorlup covers all of these. Beyond the brief we added: a **tasks list** fed by automations, **tutor utilisation and monthly pay due**, **gross margin**, **goals at risk**, **global search (Ctrl K)**, a **custom automation builder**, **"send me a test"** for automations, and **Paystack** (naira) alongside Stripe in integrations.
 
 ## What's in the demo
 
 | Screen | Highlights |
 | --- | --- |
-| **Landing page** (`/`) | Hero, features, automations, "works with your site", pricing tiers, FAQ, *Book a demo*, *Try the live demo* |
+| **Landing page** (`/`) | Hero, features, automations, "works with your site", *Contact sales* (hello@eaglescroft.com.ng, no public prices), FAQ, *Book a demo*, *Try the live demo*, "Powered by Eaglescroft" credit |
 | **Dashboard** | Enquiries this month, conversion, lessons this week, money collected, outstanding/overdue, attendance; revenue chart, enquiry trend, pipeline, upcoming lessons, automation activity, tasks, "needs attention" |
 | **Enquiries** | Drag-and-drop Kanban (New → Contacted → Trial booked → Trial done → Enrolled / Lost) plus list view, source filter, enquiry sheet with conversation, book a trial, enrol (creates family + student), mark lost with reason |
 | **Inbox** | Every email/SMS/WhatsApp thread with families and prospects, unread filter, reply with templates |
@@ -157,7 +157,7 @@ Or from the command line: `npx vercel` then `npx vercel --prod`.
 
 ## "Works with your site"
 
-- **Embed form:** `<div id="tutorloop-enquiry"></div><script src="https://<host>/embed.js" data-org="brightpath" async></script>` (auto-resizing iframe, brand colour, honeypot spam field) or a plain iframe to `/embed/enquiry/brightpath`.
+- **Embed form:** `<div id="tutorlup-enquiry"></div><script src="https://<host>/embed.js" data-org="brightpath" async></script>` (auto-resizing iframe, brand colour, honeypot spam field) or a plain iframe to `/embed/enquiry/brightpath`.
 - **REST API:** `POST /api/v1/enquiries` and `GET /api/v1/enquiries` with `Authorization: Bearer <api key>`. The demo key is shown under *Website & API*. Returns `201`, `401` or `422` with field errors. CORS enabled.
 - **Webhooks:** endpoints and event selection UI with an example signed payload (deliveries are simulated in the demo).
 

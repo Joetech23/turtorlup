@@ -9,8 +9,8 @@ import { persistForOrg } from "./persist-core";
 
 /** In demo mode, enquiries posted to the API are kept in server memory so the open app can pick them up. */
 type Inbox = { actions: Action[] };
-const g = globalThis as unknown as { __tutorloopInbox?: Inbox };
-export const demoInbox: Inbox = (g.__tutorloopInbox ??= { actions: [] });
+const g = globalThis as unknown as { __tutorlupInbox?: Inbox };
+export const demoInbox: Inbox = (g.__tutorlupInbox ??= { actions: [] });
 
 export type EnquiryInput = {
   parent_name?: unknown;

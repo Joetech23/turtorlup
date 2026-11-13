@@ -1,8 +1,8 @@
 {
-  "name": "tutorloop",
+  "name": "tutorlup",
   "version": "0.1.0",
   "private": true,
-  "description": "Tutorloop: the CRM that keeps tutoring businesses in the loop (demo).",
+  "description": "Tutorlup: the CRM that keeps tutoring businesses in the loop (demo).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

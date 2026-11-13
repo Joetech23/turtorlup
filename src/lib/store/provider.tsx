@@ -16,9 +16,9 @@ type Ctx = {
 
 const WorkspaceContext = createContext<Ctx | null>(null);
 
-export const INBOUND_KEY = "tutorloop:inbound";
+export const INBOUND_KEY = "tutorlup:inbound";
 
-const storageKey = (ws: Workspace) => `tutorloop:demo:v1:${ws.org.id}:${ws.anchor.slice(0, 10)}`;
+const storageKey = (ws: Workspace) => `tutorlup:demo:v1:${ws.org.id}:${ws.anchor.slice(0, 10)}`;
 
 function readLog(key: string): Action[] {
   try {

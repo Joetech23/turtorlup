@@ -31,7 +31,7 @@ export function BookDemo({ full, light }: { full?: boolean; light?: boolean }) {
           <>
             <DialogHeader>
               <DialogTitle>Book a 20-minute walkthrough</DialogTitle>
-              <DialogDescription>We&apos;ll show you Tutorloop set up for a centre like yours.</DialogDescription>
+              <DialogDescription>We&apos;ll show you Tutorlup set up for a centre like yours.</DialogDescription>
             </DialogHeader>
             <form
               className="grid gap-3"

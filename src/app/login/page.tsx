@@ -24,7 +24,7 @@ export default function LoginPage() {
             <MagicLinkForm />
           ) : (
             <div className="rounded-xl border bg-muted/50 p-4 text-sm text-muted-foreground">
-              This copy of Tutorloop is running in <strong className="text-foreground">demo mode</strong>, so there are no user accounts yet.
+              This copy of Tutorlup is running in <strong className="text-foreground">demo mode</strong>, so there are no user accounts yet.
               Jump straight into the sample workspace below.
             </div>
           )}

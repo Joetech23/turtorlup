@@ -1,4 +1,4 @@
--- Tutorloop: multi-tenant schema.
+-- Tutorlup: multi-tenant schema.
 -- Every business table carries org_id. Row-level security lets a signed-in user see only
 -- rows for organisations they are a team member of. Server-side code that uses the
 -- service-role key (public API, password-free demo) always filters by org_id itself.

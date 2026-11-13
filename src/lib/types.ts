@@ -1,4 +1,4 @@
-// Core domain types for Tutorloop. Every record belongs to an organisation (orgId),
+// Core domain types for Tutorlup. Every record belongs to an organisation (orgId),
 // mirroring the multi-tenant Postgres schema in supabase/migrations.
 
 export type Channel = "email" | "sms" | "whatsapp";

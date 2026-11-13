@@ -22,7 +22,7 @@ const COLOURS = ["#4f46e5", "#0d9488", "#db2777", "#ea580c", "#16a34a", "#0284c7
 
 const ROLES: Record<Role, { label: string; can: string }> = {
   owner: { label: "Owner", can: "Everything, including billing and deleting the account" },
-  admin: { label: "Admin", can: "Everything except the Tutorloop subscription" },
+  admin: { label: "Admin", can: "Everything except the Tutorlup subscription" },
   staff: { label: "Front desk", can: "Enquiries, families, calendar, messages and invoices" },
   tutor: { label: "Tutor", can: "Only their own schedule, students, notes and reports" },
 };
@@ -250,7 +250,7 @@ export default function SettingsPage() {
                 <div className="text-sm text-muted-foreground">Up to 150 active students · 10 team members · unlimited automations</div>
               </div>
               <Button variant="outline" asChild>
-                <Link href="/#pricing">Compare plans</Link>
+                <Link href="/#contact">Contact sales</Link>
               </Button>
             </CardContent>
           </Card>

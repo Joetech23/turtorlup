@@ -138,7 +138,7 @@ export function applyAction(ws: Workspace, action: Action, effects: Effect[] = [
       next = simulate(next, "auto_new_enquiry", action.at, e.id, `New enquiry: ${e.studentName}`, {
         enquiryId: e.id,
         toName: e.parentName,
-        vars: { "parent.first_name": first(e.parentName), "parent.name": e.parentName, "student.first_name": first(e.studentName), "student.name": e.studentName, trial_link: `${ws.org.slug}.tutorloop.app/trial` },
+        vars: { "parent.first_name": first(e.parentName), "parent.name": e.parentName, "student.first_name": first(e.studentName), "student.name": e.studentName, trial_link: `${ws.org.slug}.tutorlup.app/trial` },
       }, effects);
       return next;
     }
@@ -225,7 +225,7 @@ export function applyAction(ws: Workspace, action: Action, effects: Effect[] = [
       const msg: Message = {
         id: action.msgId, orgId: ws.org.id, familyId: inv.familyId, direction: "outbound", channel: g?.preferredChannel ?? "email",
         subject: `Reminder: invoice ${inv.number}`,
-        body: `Hi ${g?.firstName ?? "there"}, a quick reminder that invoice ${inv.number} for £${total.toFixed(2)} is due. You can pay securely here: pay.tutorloop.app/i/${inv.number}`,
+        body: `Hi ${g?.firstName ?? "there"}, a quick reminder that invoice ${inv.number} for £${total.toFixed(2)} is due. You can pay securely here: pay.tutorlup.app/i/${inv.number}`,
         at: action.at, author: "You", status: "simulated",
       };
       effects.push({ title: "Reminder sent (simulated)", description: `${inv.number} → ${g?.firstName} ${g?.lastName}` });
